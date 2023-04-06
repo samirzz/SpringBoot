@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xlms:th="https://www.thymeleaf.com" xmlns:xlms="http://www.w3.org/1999/xhtml">
+<head>
+    <title>My Bookstore</title>
+    <style>
+        body {
+            background-image: url("static/images/store.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #000;
+            color: #fff;
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        nav ul li {
+            height: 100%;
+        }
+
+        nav ul li a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 0 20px;
+            height: 100%;
+            line-height: 50px;
+        }
+
+        nav ul li a.active {
+            font-weight: bold;
+        }
+
+        /* Style the form container */
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Style the form labels */
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Style the form inputs */
+        input[type=text], input[type=number] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        /* Style the form submit button */
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        input[type=submit]:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="book_Store" class="active">Book store</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="available_books">Available Books</a></li>
+        <li><a href="my_Books">My Book</a></li>
+        <li><a href="book_register">New Book Register</a></li>
+    </ul>
+</nav>
+
+<div class="form-container">
+    <form th:action="@{/Submit}" method="post">
+        <label for="book-name">Name:</label>
+        <input type="text" id="book-name" name="book">
+
+        <label for="author-name">Author Name:</label>
+        <input type="text" id="author-name" name="author">
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price">
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>

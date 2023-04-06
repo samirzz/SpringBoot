@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xlms:th="https://www.thymeleaf.com">
+<head>
+    <title>My Bookstore</title>
+    <style>
+        body {
+            background-image: url("static/images/store.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #000;
+            color: #fff;
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        nav ul li {
+            height: 100%;
+        }
+
+        nav ul li a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 0 20px;
+            height: 100%;
+            line-height: 50px;
+        }
+
+        nav ul li a.active {
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+            color:darkred;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.2em;
+            color: black;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="book_Store" class="active">Book store</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="available_books">Available Books</a></li>
+        <li><a href="my_Books">My Book</a></li>
+        <li><a href="book_register">New Book Register</a></li>
+    </ul>
+</nav>
+<h1>Welcome to My Bookstore</h1>
+<h2>Discover a world of imagination and knowledge with our vast collection of books. Whether you're looking for a classic novel, a gripping thriller, or a heartwarming memoir, we have something for every reader.</h2>
+</body>
+</html>
