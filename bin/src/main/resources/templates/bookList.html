@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:xlms="http://www.w3.org/1999/xhtml">
+<head>
+    <title>My Bookstore</title>
+    <style>
+        body {
+            background-image: url("static/images/store.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #000;
+            color: #fff;
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        nav ul li {
+            height: 100%;
+        }
+
+        nav ul li a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 0 20px;
+            height: 100%;
+            line-height: 50px;
+        }
+
+        nav ul li a.active {
+            font-weight: bold;
+        }
+
+        /*avaliable books */
+
+        /* Style the table */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        /* Style the table headers */
+        th {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: left;
+            padding: 8px;
+        }
+
+        /* Style the table cells */
+        td, th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        /* Style the "Action" column */
+        .action {
+            text-align: center;
+        }
+
+        /* Set the color of the "Name", "Author Name", and "Price" columns to black */
+        th:nth-child(2),
+        td:nth-child(2),
+        th:nth-child(3),
+        td:nth-child(3),
+        th:nth-child(4),
+        td:nth-child(4) {
+            color: #000;
+        }
+
+        /* Style the action buttons */
+        .action button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .action button:hover {
+            background-color: #3e8e41;
+        }
+        /* Add numbers to the "ID" column */
+        tbody tr {
+            counter-increment: rowNumber;
+        }
+
+        tbody tr td:first-child::before {
+            content: counter(rowNumber);
+            min-width: 1em;
+            margin-right: 0.5em;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="book_Store" class="active">Book store</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="available_books">Available Books</a></li>
+        <li><a href="my_Books">My Book</a></li>
+        <li><a href="book_register">New Book Register</a></li>
+    </ul>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th class="action">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="b:${book}">
+            <td th:text="${b.id}"></td>
+            <td th:text="${b.name}"> </td>
+            <td th:text="${b.author}"></td>
+            <td th:text="${b.price}"></td>
+            <td class="action">
+                <button>Edit</button>
+                <button>Delete</button>
+            </td>
+<!--            <td><a class="btn btn-secondary btn-sm">Add to my book</a></td>-->
+        </tr>
+
+        </tbody>
+    </table>
+</nav>
+</body>
+</html>

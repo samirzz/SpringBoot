@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xlms:th="https://www.thymeleaf.com" xmlns:xlms="http://www.w3.org/1999/xhtml">
+<html lang="en"  xmlns:xlms="http://www.w3.org/1999/xhtml">
 <head>
     <title>My Bookstore</title>
     <style>
@@ -129,36 +129,18 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>1</td>
-            <td>The Great Gatsby</td>
-            <td>F. Scott Fitzgerald</td>
-            <td>$12.99</td>
+        <tr th:each="b:${book}">
+           <!-- <td th:text="${b.id}"></td>-->
+            <td th:text="${b.name}"> </td>
+            <td th:text="${b.author}"></td>
+            <td th:text="${b.price}"></td>
             <td class="action">
                 <button>Edit</button>
                 <button>Delete</button>
             </td>
+<!--            <td><a class="btn btn-secondary btn-sm">Add to my book</a></td>-->
         </tr>
-        <tr>
-            <td>2</td>
-            <td>To Kill a Mockingbird</td>
-            <td>Harper Lee</td>
-            <td>$9.99</td>
-            <td class="action">
-                <button>Edit</button>
-                <button>Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>1984</td>
-            <td>George Orwell</td>
-            <td>$8.99</td>
-            <td class="action">
-                <button>Edit</button>
-                <button>Delete</button>
-            </td>
-        </tr>
+
         </tbody>
     </table>
 </nav>
