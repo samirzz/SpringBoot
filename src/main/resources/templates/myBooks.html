@@ -116,9 +116,10 @@
 <body>
 <nav>
     <ul>
+
         <li><a href="/">Home</a></li>
         <li><a href="available_books">Available Books</a></li>
-        <li><a href="my_books">My Book</a></li>
+        <li><a th:href="@{~/my_books}">My Books</a></li>
         <li><a href="book_register">New Book Register</a></li>
     </ul>
     <table>
@@ -132,17 +133,16 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="b:${book}">
+        <<tr th:each="b:${myBook}">
             <td th:text="${b.id}"></td>
             <td th:text="${b.name}"> </td>
             <td th:text="${b.author}"></td>
             <td th:text="${b.price}"></td>
             <td class="action">
-                <button>Edit</button>
-                <button><a th:href="@{/deleteBook/{id}(id=${b.id})}">Delete</a></button>
-            </td>
-           <td><a class="btn btn-secondary btn-sm" th:href="@{/myList/{id}(id=${b.id})}">Add to my book</a></td>
+               <button><a th:href="@{/deleteMyList/{id}(id=${b.id})}">Delete</a></button>
 
+
+            </td>
         </tr>
 
         </tbody>
